@@ -1,54 +1,79 @@
-# Scholarship Management System
+# **Scholarship Management System**
 
-## Overview
+## **Overview**
 
-The Scholarship Management System is a web application designed to streamline the process of managing scholarships for college and university students. It enables students to view available scholarships, apply, and track their applications, while providing administrators with tools to manage scholarship applications effectively.
+The **Scholarship Management System** is a web application designed to streamline the process of managing scholarships for college and university students. It enables students to view available scholarships, apply, and track their applications, while providing administrators with tools to manage scholarship applications effectively.
 
----
+## **Live Project**
 
-## Features
+[Scholarship Management System](https://scholarshipsite.netlify.app)
 
-### For Students:
+## **Screenshot**
 
-- Browse and search for available scholarships.
-- Apply for scholarships with user-friendly forms.
-- View application status and feedback.
-- Cancel applications when necessary.
+![Scholarship Management System](https://i.ibb.co.com/tMCTCp18/scholarship2.png)
 
-### For Administrators:
+## **Technologies Used**
 
-- Manage submitted scholarship applications.
-- Approve or reject applications.
-- Provide feedback on applications.
-- Visualize application data using charts and reports.
+- **Frontend:** React.js, Vite, Tailwind CSS, DaisyUI
+- **Backend:** Firebase Authentication
+- **Payment Processing:** Stripe
+- **State Management:** TanStack Query
+- **UI Enhancements:** SweetAlert2, React Icons
 
----
+## **Core Features**
 
-## Tech Stack
+✅ View available scholarships  
+✅ Apply for scholarships  
+✅ Track application status  
+✅ Secure authentication using Firebase  
+✅ Payment processing with Stripe
 
-### Frontend:
+## **Dependencies Used**
 
-- **React**: A JavaScript library for building user interfaces.
-- **React Router DOM**: For navigation and routing.
-- **TailwindCSS** with **DaisyUI**: For responsive and modern UI design.
-- **Axios**: For API integration.
-- **React Query (@tanstack/react-query)**: For data fetching and state management.
-- **Chart.js** via **react-chartjs-2**: For visualizing data.
-- **SweetAlert2**: For alerts and modals.
-- **Swiper**: For interactive sliders.
+- `react`, `react-dom`
+- `react-router-dom`
+- `firebase`
+- `@tanstack/react-query`
+- `@stripe/react-stripe-js`, `@stripe/stripe-js`
 
-### Backend:
+## **How to Run the Project Locally**
 
-- This project assumes the existence of a compatible backend API for managing data.
+### **1. Clone the Repository**
 
-### Additional Libraries:
+```sh
+git clone https://github.com/sharifulalam-dev/scholarshipclient.git
+cd scholarship-management
+```
 
-- **Firebase**: For authentication and data storage.
-- **React Helmet Async**: For managing document head.
-- **Animate.css**: For animations.
-- **React Spinners**: For loading indicators.
-- **Stripe.js**: For payment processing.
+### **2. Install Dependencies**
 
-## Contact
+```sh
+npm install
+```
 
-For any queries or issues, please contact the project maintainer at [amaramik@gmail.com].
+### **3. Set Up Environment Variables**
+
+Create a `.env` file in the project root and add the following variables:
+
+```sh
+VITE_FIREBASE_API_KEY=your_firebase_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_firebase_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
+VITE_FIREBASE_APP_ID=your_firebase_app_id
+
+VITE_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
+```
+
+### **4. Start the Development Server**
+
+```sh
+npm run dev
+```
+
+The application should now be running at `http://localhost:5173/`.
+
+## **Live Project**
+
+- **Live Demo:** [Scholarship Management System](https://scholarshipsite.netlify.app)
