@@ -76,4 +76,4 @@ The application should now be running at `http://localhost:5173/`.
 
 ## **Live Project**
 
-- **Live Demo:** [Scholarship Management System](https://scholarshipsite.netlify.app)
+- **Live Demo:** [Scholarship Management System](https://test-982fe.web.app)
