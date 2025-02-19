@@ -8,8 +8,11 @@ import UserProfile from "../components/UserProfile";
 import Dashbaord from "../Dashboard/Dashboard";
 import Profile from "../Dashboard/Profile";
 import MainLayout from "../MainLayout/MainLayout";
+import About from "../Pages/About";
 import AllScholarshipPage from "../Pages/AllScholarShipPage";
+import Contact from "../Pages/Contact";
 import ErrorPage from "../Pages/ErrorPage";
+import Gallery from "../Pages/Gallery";
 import Home from "../Pages/Home";
 import ManageScholarships from "../Pages/ManageScholarships";
 import ScholarshipDetails from "../Pages/ScholarshipDetails";
@@ -44,7 +47,6 @@ const router = createBrowserRouter([
       },
       {
         path: "/allscholarship",
-
         element: (
           <PrivateRoute>
             <AllScholarshipPage />
@@ -72,7 +74,6 @@ const router = createBrowserRouter([
             <Dashbaord />
           </PrivateRoute>
         ),
-
         children: [
           { path: "/dashboard", element: <DashboardMain /> },
           { path: "/dashboard/profile", element: <Profile /> },
@@ -137,6 +138,19 @@ const router = createBrowserRouter([
             <PaymentPage />
           </PrivateRoute>
         ),
+      },
+      // Added new routes for About, Gallery, and Contact
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/gallery",
+        element: <Gallery />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },

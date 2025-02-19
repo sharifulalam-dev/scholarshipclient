@@ -44,12 +44,12 @@ const Navbar = () => {
   }
 
   return (
-    <div className="bg-gray-100 sticky top-0 z-10">
-      <div className="max-w-7xl mx-auto py-4 px-4 ">
-        <div className="container sticky top-0 z-20">
+    <div className="bg-[#2A3B69] sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto py-4 px-4">
+        <div className="container sticky top-0 z-50">
           <header className="container flex justify-between items-center w-full">
             <Link to="/">
-              <div className="flex items-center text-2xl font-bold">
+              <div className="flex items-center text-2xl font-bold text-white">
                 <img
                   src={Logo}
                   alt="Logo"
@@ -67,7 +67,9 @@ const Navbar = () => {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  isActive ? "text-orange-300" : "hover:text-[#E05307]"
+                  isActive
+                    ? "text-[#FF6B4A]"
+                    : "hover:text-[#FF6B4A] text-white"
                 }
               >
                 Home
@@ -75,17 +77,51 @@ const Navbar = () => {
               <NavLink
                 to="/allscholarship"
                 className={({ isActive }) =>
-                  isActive ? "text-orange-400" : "hover:text-[#E05307]"
+                  isActive
+                    ? "text-[#FF6B4A]"
+                    : "hover:text-[#FF6B4A] text-white"
                 }
               >
                 All Scholarships
+              </NavLink>
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-[#FF6B4A]"
+                    : "hover:text-[#FF6B4A] text-white"
+                }
+              >
+                About
+              </NavLink>
+              <NavLink
+                to="/gallery"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-[#FF6B4A]"
+                    : "hover:text-[#FF6B4A] text-white"
+                }
+              >
+                Gallery
+              </NavLink>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-[#FF6B4A]"
+                    : "hover:text-[#FF6B4A] text-white"
+                }
+              >
+                Contact
               </NavLink>
               {user ? (
                 role === "admin" ? (
                   <NavLink
                     to="/dashboard"
                     className={({ isActive }) =>
-                      isActive ? "text-orange-300" : "hover:text-[#E05307]"
+                      isActive
+                        ? "text-[#FF6B4A]"
+                        : "hover:text-[#FF6B4A] text-white"
                     }
                   >
                     Admin Dashboard
@@ -94,7 +130,9 @@ const Navbar = () => {
                   <NavLink
                     to="/dashboard"
                     className={({ isActive }) =>
-                      isActive ? "text-orange-300" : "hover:text-[#E05307]"
+                      isActive
+                        ? "text-[#FF6B4A]"
+                        : "hover:text-[#FF6B4A] text-white"
                     }
                   >
                     User Dashboard
@@ -107,17 +145,17 @@ const Navbar = () => {
               {user ? (
                 <button
                   onClick={handleLogOut}
-                  className="bg-orange-400 text-white px-4 py-2 rounded-[20px] hover:bg-orange-500"
+                  className="bg-[#34B78F] text-white px-4 py-2 rounded-[20px] hover:bg-[#34B78F] transition duration-300"
                 >
                   Log Out
                 </button>
               ) : (
-                <button className="bg-orange-400 text-white px-4 py-2 rounded-[20px] hover:bg-orange-500">
+                <button className="bg-[#34B78F] text-white px-4 py-2 rounded-[20px] hover:bg-[#34B78F] transition duration-300">
                   <Link to="/login">Login</Link>
                 </button>
               )}
               <button
-                className="md:hidden text-2xl"
+                className="md:hidden text-2xl text-white"
                 onClick={() => setMenuOpen(!menuOpen)}
               >
                 <FaBars />

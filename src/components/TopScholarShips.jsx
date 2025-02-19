@@ -32,13 +32,13 @@ const TotalScholarships = () => {
   });
 
   return (
-    <section className="py-10 bg-gradient-to-r from-blue-50 to-blue-100">
-      <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-gray-800 text-center mb-8">
+    <section className="py-10 b-[#F5F7FA]">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-4">
+        <h2 className="text-3xl font-extrabold text-[#2A3B69] text-center mb-8">
           Total Scholarships
         </h2>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {scholarships &&
             scholarships
               .sort(
@@ -46,7 +46,7 @@ const TotalScholarships = () => {
                   a.applicationFees - b.applicationFees ||
                   new Date(a.deadline) - new Date(b.deadline)
               )
-              .slice(0, 6)
+              .slice(0, 4)
               .map((scholarship) => (
                 <div
                   key={scholarship._id}
@@ -58,14 +58,14 @@ const TotalScholarships = () => {
                     className="mb-4 h-48 w-full object-cover rounded-md"
                   />
 
-                  <span className="absolute top-4 right-4 bg-blue-600 text-white text-sm py-1 px-3 rounded-md shadow-sm">
+                  <span className="absolute top-4 right-4 bg-[#34B78F] text-white text-sm py-1 px-3 rounded-md shadow-sm">
                     {scholarship.subjectCategory}
                   </span>
 
-                  <h3 className="text-xl font-semibold text-blue-700 mb-1">
+                  <h3 className="text-xl font-semibold text-[#2A3B69] mb-1">
                     {scholarship.universityName}
                   </h3>
-                  <p className="text-orange-600 text-md font-medium mb-2">
+                  <p className="text-[#FF6B4A] text-md font-medium mb-2">
                     {scholarship.scholarshipCategory}
                   </p>
 
@@ -93,12 +93,12 @@ const TotalScholarships = () => {
                   </div>
 
                   <div className="flex items-center justify-between pt-3 mt-3 border-t border-gray-200">
-                    <h4 className="text-red-700 text-lg font-bold">
+                    <h4 className="text-[#FF6B4A] text-lg font-bold">
                       ${scholarship.applicationFees}
                     </h4>
                     <Link
                       to={`/scholarship-details/${scholarship._id}`}
-                      className="text-blue-600 font-medium hover:underline"
+                      className="text-[#34B78F] font-medium hover:underline"
                     >
                       View Details &rarr;
                     </Link>
@@ -109,9 +109,11 @@ const TotalScholarships = () => {
 
         <div className="text-center mt-8">
           <Link to="/allscholarship">
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors font-semibold">
-              View All Scholarships
-            </button>
+            <div className="mt-12 text-center">
+              <button className="rounded-full bg-[#2A3B69] px-8 py-3 font-semibold text-white transition-all hover:bg-[#34B78F] hover:shadow-lg">
+                View All Scholarships
+              </button>
+            </div>
           </Link>
         </div>
       </div>
