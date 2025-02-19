@@ -1,26 +1,8 @@
-import {
-  GoogleMap,
-  InfoWindow,
-  LoadScript,
-  Marker,
-} from "@react-google-maps/api";
-import React, { useState } from "react";
+import Lottie from "lottie-react"; // Use Lottie instead of Player
+import React from "react";
+import contactAnimation from "../assets/contact.json"; // Path to your Lottie JSON file
 
 const Contact = () => {
-  const [selectedPlace, setSelectedPlace] = useState(null);
-
-  // Coordinates for Dhaka, Bangladesh
-  const position = { lat: 23.8103, lng: 90.4125 };
-
-  // Styles for the map
-  const containerStyle = {
-    width: "100%",
-    height: "400px",
-  };
-
-  // Google Maps API Key (You will need to replace this with your own API Key)
-  const apiKey = "YOUR_GOOGLE_MAPS_API_KEY";
-
   return (
     <div className="bg-white py-10">
       <section className="mx-auto max-w-7xl px-6">
@@ -89,31 +71,14 @@ const Contact = () => {
             </form>
           </div>
 
-          {/* Google Map Section */}
+          {/* Lottie Animation Section */}
           <div className="relative rounded-lg overflow-hidden shadow-md">
-            <LoadScript googleMapsApiKey={apiKey}>
-              <GoogleMap
-                mapContainerStyle={containerStyle}
-                center={position}
-                zoom={13}
-              >
-                <Marker
-                  position={position}
-                  onClick={() => setSelectedPlace(position)}
-                />
-                {selectedPlace && (
-                  <InfoWindow
-                    position={position}
-                    onCloseClick={() => setSelectedPlace(null)}
-                  >
-                    <div>
-                      <h4>Dhaka, Bangladesh</h4>
-                      <p>Located in the heart of Bangladesh</p>
-                    </div>
-                  </InfoWindow>
-                )}
-              </GoogleMap>
-            </LoadScript>
+            <Lottie
+              animationData={contactAnimation} // Use animationData instead of src
+              loop={true}
+              autoplay={true}
+              className="w-full h-64 object-cover"
+            />
           </div>
         </div>
       </section>
