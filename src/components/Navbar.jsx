@@ -44,84 +44,88 @@ const Navbar = () => {
   }
 
   return (
-    <div className="relative max-w-[95%] mx-auto ">
-      <header className="bg-white -mt-2 text-black py-4 px-6 flex justify-between items-center fixed w-full max-w-[95%] left-0 right-0 mx-auto z-50">
-        <Link to="/">
-          <div className="flex items-center text-2xl font-bold">
-            <img
-              src={Logo}
-              alt="Logo"
-              className="h-[50px] w-[50px] rounded-full mr-2"
-            />
-            Scholarship
-          </div>
-        </Link>
+    <div className="bg-gray-100 sticky top-0 z-10">
+      <div className="max-w-7xl mx-auto py-4 px-4 ">
+        <div className="container sticky top-0 z-20">
+          <header className="container flex justify-between items-center w-full">
+            <Link to="/">
+              <div className="flex items-center text-2xl font-bold">
+                <img
+                  src={Logo}
+                  alt="Logo"
+                  className="h-[50px] w-[50px] rounded-full mr-2"
+                />
+                Scholarship
+              </div>
+            </Link>
 
-        <nav
-          className={`${
-            menuOpen ? "flex" : "hidden"
-          } md:flex flex-col md:flex-row md:items-center gap-6 text-lg absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent p-6 md:p-0 z-10`}
-        >
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive ? "text-orange-300" : "hover:text-[#E05307]"
-            }
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/allscholarship"
-            className={({ isActive }) =>
-              isActive ? "text-orange-400" : "hover:text-[#E05307]"
-            }
-          >
-            All Scholarships
-          </NavLink>
-          {user ? (
-            role === "admin" ? (
-              <NavLink
-                to="/dashboard"
-                className={({ isActive }) =>
-                  isActive ? "text-orange-300" : "hover:text-[#E05307]"
-                }
-              >
-                Admin Dashboard
-              </NavLink>
-            ) : (
-              <NavLink
-                to="/dashboard"
-                className={({ isActive }) =>
-                  isActive ? "text-orange-300" : "hover:text-[#E05307]"
-                }
-              >
-                User Dashboard
-              </NavLink>
-            )
-          ) : null}
-        </nav>
-
-        <div className="flex items-center gap-4">
-          {user ? (
-            <button
-              onClick={handleLogOut}
-              className="bg-orange-400 text-white px-4 py-2 rounded-[20px] hover:bg-orange-500"
+            <nav
+              className={`${
+                menuOpen ? "flex" : "hidden"
+              } md:flex flex-col md:flex-row md:items-center gap-6 text-lg absolute md:static top-16 left-0 w-full md:w-auto md:bg-transparent p-6 md:p-0 z-10`}
             >
-              Log Out
-            </button>
-          ) : (
-            <button className="bg-orange-400 text-white px-4 py-2 rounded-[20px] hover:bg-orange-500">
-              <Link to="/login">Login</Link>
-            </button>
-          )}
-          <button
-            className="md:hidden text-2xl"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <FaBars />
-          </button>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "text-orange-300" : "hover:text-[#E05307]"
+                }
+              >
+                Home
+              </NavLink>
+              <NavLink
+                to="/allscholarship"
+                className={({ isActive }) =>
+                  isActive ? "text-orange-400" : "hover:text-[#E05307]"
+                }
+              >
+                All Scholarships
+              </NavLink>
+              {user ? (
+                role === "admin" ? (
+                  <NavLink
+                    to="/dashboard"
+                    className={({ isActive }) =>
+                      isActive ? "text-orange-300" : "hover:text-[#E05307]"
+                    }
+                  >
+                    Admin Dashboard
+                  </NavLink>
+                ) : (
+                  <NavLink
+                    to="/dashboard"
+                    className={({ isActive }) =>
+                      isActive ? "text-orange-300" : "hover:text-[#E05307]"
+                    }
+                  >
+                    User Dashboard
+                  </NavLink>
+                )
+              ) : null}
+            </nav>
+
+            <div className="flex items-center gap-4">
+              {user ? (
+                <button
+                  onClick={handleLogOut}
+                  className="bg-orange-400 text-white px-4 py-2 rounded-[20px] hover:bg-orange-500"
+                >
+                  Log Out
+                </button>
+              ) : (
+                <button className="bg-orange-400 text-white px-4 py-2 rounded-[20px] hover:bg-orange-500">
+                  <Link to="/login">Login</Link>
+                </button>
+              )}
+              <button
+                className="md:hidden text-2xl"
+                onClick={() => setMenuOpen(!menuOpen)}
+              >
+                <FaBars />
+              </button>
+            </div>
+          </header>
         </div>
-      </header>
+      </div>
     </div>
   );
 };
