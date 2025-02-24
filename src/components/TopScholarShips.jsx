@@ -79,7 +79,7 @@ const TotalScholarships = () => {
 
                   <p className="text-gray-700 text-sm mb-2">
                     <strong>Application Deadline:</strong>{" "}
-                    {scholarship.deadline}
+                    {scholarship.applicationDeadline}
                   </p>
 
                   <div className="mt-3 mb-2 flex items-center">

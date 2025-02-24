@@ -1,13 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+import { ClipLoader } from "react-spinners";
 import useAuth from "./../Hooks/useAuth";
 import Admin from "./Admin";
 import ModeratorMenu from "./ModeratorMenu";
 import UserMenu from "./UserMenu";
+import Logo from "/Logo.png";
 const Dashboard = () => {
   const { user } = useAuth();
-
   const [role, setRole] = useState("");
   const [loading, setLoading] = useState(true);
 
@@ -20,7 +21,6 @@ const Dashboard = () => {
               user.email || "user1@test.com"
             }`
           );
-
           setRole(response.data.role);
         } catch (error) {
           console.error("Error fetching role:", error);
@@ -35,19 +35,24 @@ const Dashboard = () => {
     fetchUserRole();
   }, [user]);
 
-  const handleLogOut = () => {
-    logOut();
-    navigate("/");
-  };
-
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <div className="flex justify-center items-center min-h-screen bg-gray-100">
+        <ClipLoader size={50} color="#2A3B69" />
+      </div>
+    );
   }
 
   return (
-    <div className="flex flex-col lg:flex-row roundded-lg">
-      <div className="mt-20  flex lg:flex-row flex-col min-h-screen  w-full ">
-        <aside className="bg-blue-600  text-white p-2 min-w-[200px] lg:w-1/5">
+    <div className="flex flex-col lg:flex-row rounded-lg">
+      <div className="flex lg:flex-row flex-col min-h-screen w-full">
+        <aside className=" text-black p-2 min-w-[200px] lg:w-1/5">
+          {/* Logo linked to Home */}
+          <div className="flex justify-center items-center mb-4">
+            <Link to="/">
+              <img src={Logo} alt="Website Logo" className="w-32" />
+            </Link>
+          </div>
           <h2 className="text-2xl font-bold my-4 flex items-center justify-center underline">
             Dashboard
           </h2>

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 export default function About() {
   return (
-    <div className="bg-white">
+    <div className="bg-[#578e78]">
       {/* Hero Section */}
       <section className="relative h-[600px]">
         <img
@@ -23,7 +23,7 @@ export default function About() {
       </section>
 
       {/* Why I Exist Section */}
-      <section className="bg-[#F5F7FA] py-20">
+      <section className="bg-[#F0F4F8] py-20 text-white">
         <div className="mx-auto max-w-7xl px-6 md:flex md:items-center md:gap-12">
           <div className="md:w-1/2">
             <img

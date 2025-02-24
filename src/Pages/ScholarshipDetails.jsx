@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import Spinner from "react-spinner"; // Make sure this import matches your installed library
 import SwiperCore from "swiper/core";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -24,13 +25,30 @@ const ScholarshipDetails = () => {
       const { data } = await axios.get(
         `https://scholarshipserver.vercel.app/scholarship-details/${id}`
       );
-
       return data;
     },
   });
 
   if (isLoading) {
-    return <p>Loading scholarship details...</p>;
+    return (
+      <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          minHeight: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "#fff",
+          zIndex: 99999, // Ensure the spinner is above all other elements
+        }}
+      >
+        <Spinner />
+      </div>
+    );
   }
 
   if (isError) {

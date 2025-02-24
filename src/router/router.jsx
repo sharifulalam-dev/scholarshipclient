@@ -67,53 +67,6 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register />,
       },
-      {
-        path: "/dashboard",
-        element: (
-          <PrivateRoute>
-            <Dashbaord />
-          </PrivateRoute>
-        ),
-        children: [
-          { path: "/dashboard", element: <DashboardMain /> },
-          { path: "/dashboard/profile", element: <Profile /> },
-          { path: "/dashboard/myapplications", element: <MyApplications /> },
-          { path: "/dashboard/admin", element: <Admin /> },
-
-          {
-            path: "/dashboard/appliedscholarships",
-            element: <AppliedScholarships />,
-          },
-          {
-            path: "/dashboard/manageusers",
-            element: <ManageUsers />,
-          },
-          {
-            path: "/dashboard/myreviews",
-            element: <MyReviews />,
-          },
-          {
-            path: "/dashboard/managescholarships",
-            element: <ManageScholarships />,
-          },
-          {
-            path: "/dashboard/addscholarship",
-            element: <AddScholarship />,
-          },
-          {
-            path: "/dashboard/allscholarships",
-            element: <AllScholarshipPage />,
-          },
-          {
-            path: "/dashboard/allreviews",
-            element: <AllReviews />,
-          },
-          {
-            path: "/dashboard/allappliedscholarships",
-            element: <AppliedScholarshipManage />,
-          },
-        ],
-      },
 
       {
         path: "/my-profile",
@@ -151,6 +104,53 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <Dashbaord />
+      </PrivateRoute>
+    ),
+    children: [
+      { path: "/dashboard", element: <DashboardMain /> },
+      { path: "/dashboard/profile", element: <Profile /> },
+      { path: "/dashboard/myapplications", element: <MyApplications /> },
+      { path: "/dashboard/admin", element: <Admin /> },
+
+      {
+        path: "/dashboard/appliedscholarships",
+        element: <AppliedScholarships />,
+      },
+      {
+        path: "/dashboard/manageusers",
+        element: <ManageUsers />,
+      },
+      {
+        path: "/dashboard/myreviews",
+        element: <MyReviews />,
+      },
+      {
+        path: "/dashboard/managescholarships",
+        element: <ManageScholarships />,
+      },
+      {
+        path: "/dashboard/addscholarship",
+        element: <AddScholarship />,
+      },
+      {
+        path: "/dashboard/allscholarships",
+        element: <AllScholarshipPage />,
+      },
+      {
+        path: "/dashboard/allreviews",
+        element: <AllReviews />,
+      },
+      {
+        path: "/dashboard/allappliedscholarships",
+        element: <AppliedScholarshipManage />,
       },
     ],
   },

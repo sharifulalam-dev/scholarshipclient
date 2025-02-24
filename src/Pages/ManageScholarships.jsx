@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React, { useState } from "react";
 import { FaEdit, FaInfoCircle, FaTrash } from "react-icons/fa";
+import Spinner from "react-spinner"; // Ensure this import matches your installed library
 import Swal from "sweetalert2";
 
 const fetchScholarships = async () => {
@@ -76,8 +77,8 @@ const ManageScholarships = () => {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
-        <p className="text-gray-600 text-lg">Loading scholarships...</p>
+      <div className="flex justify-center items-center min-h-screen bg-white">
+        <Spinner size={50} color="#00BFFF" />
       </div>
     );
   }

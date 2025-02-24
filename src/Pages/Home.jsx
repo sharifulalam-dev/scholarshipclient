@@ -239,12 +239,11 @@ export default function Home() {
               Start your scholarship application in less than 5 minutes
             </p>
             <div className="flex justify-center gap-4">
-              <button className="rounded-lg bg-[#2A3B69] hover:bg-[#34B78F] px-8 py-3 font-semibold transition-all hover:scale-105">
-                Get Started
-              </button>
-              <button className="rounded-lg border-2 border-white bg-transparent px-8 py-3 font-semibold hover:bg-white/20">
-                Learn More
-              </button>
+              <Link to="allscholarship">
+                <button className="rounded-lg bg-[#2A3B69] hover:bg-[#34B78F] px-8 py-3 font-semibold transition-all hover:scale-105">
+                  Get Started
+                </button>
+              </Link>
             </div>
           </div>
         </section>

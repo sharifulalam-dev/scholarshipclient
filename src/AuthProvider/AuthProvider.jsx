@@ -13,6 +13,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
+import { ClipLoader } from "react-spinners";
 import auth from "../Firebase/firebase.config";
 
 export const Authentication = createContext();
@@ -55,7 +56,7 @@ export default function AuthProvider({ children }) {
           );
         }
       } else {
-        localStorage.removeItem("authToken"); // Remove token if user logs out
+        localStorage.removeItem("authToken");
       }
 
       setLoading(false);
@@ -64,7 +65,7 @@ export default function AuthProvider({ children }) {
     return () => {
       unsubscribe();
     };
-  }, []);
+  }, [user]);
 
   const createNewUser = async (email, password) => {
     setLoading(true);
@@ -91,7 +92,7 @@ export default function AuthProvider({ children }) {
         password
       );
 
-      setUser(userCredential.user); // Ensure user is set
+      setUser(userCredential.user);
       return userCredential;
     } catch (err) {
       console.error("Login failed:", err);
@@ -195,8 +196,8 @@ export default function AuthProvider({ children }) {
   return (
     <Authentication.Provider value={authInfo}>
       {loading ? (
-        <div className="flex items-center justify-center h-screen">
-          <div className="text-blue-500 text-xl font-semibold">Loading...</div>
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-white z-50">
+          <ClipLoader size={50} color="#2A3B69" />
         </div>
       ) : (
         children

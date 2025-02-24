@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import { ClipLoader } from "react-spinners";
 import useAuth from "./../Hooks/useAuth";
 import Logo from "/Logo.png";
 
@@ -20,7 +21,7 @@ const Navbar = () => {
           const response = await axios.get(
             `https://scholarshipserver.vercel.app/users/${user.email}`
           );
-          setRole(response.data.role); // Assuming the response contains a `role` field
+          setRole(response.data.role);
         } catch (error) {
           console.error("Error fetching role:", error);
         } finally {
@@ -40,7 +41,11 @@ const Navbar = () => {
   };
 
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-white z-50">
+        <ClipLoader size={50} color="#2A3B69" />
+      </div>
+    );
   }
 
   return (

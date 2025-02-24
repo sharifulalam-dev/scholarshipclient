@@ -12,8 +12,8 @@ export default function UserMenu() {
             className={({ isActive }) =>
               `flex items-center px-4 py-2 rounded ${
                 isActive
-                  ? "bg-white text-blue-600 font-bold"
-                  : "hover:bg-blue-500 text-white"
+                  ? "bg-gray-200 text-black font-bold"
+                  : "hover:bg-gray-100 text-gray-700"
               }`
             }
           >
@@ -27,8 +27,8 @@ export default function UserMenu() {
             className={({ isActive }) =>
               `flex items-center px-4 py-2 rounded ${
                 isActive
-                  ? "bg-white text-blue-600 font-bold"
-                  : "hover:bg-blue-500 text-white"
+                  ? "bg-gray-200 text-black font-bold"
+                  : "hover:bg-gray-100 text-gray-700"
               }`
             }
           >
@@ -42,8 +42,8 @@ export default function UserMenu() {
             className={({ isActive }) =>
               `flex items-center px-4 py-2 rounded ${
                 isActive
-                  ? "bg-white text-blue-600 font-bold"
-                  : "hover:bg-blue-500 text-white"
+                  ? "bg-gray-200 text-black font-bold"
+                  : "hover:bg-gray-100 text-gray-700"
               }`
             }
           >

@@ -77,7 +77,7 @@ const Contact = () => {
               animationData={contactAnimation} // Use animationData instead of src
               loop={true}
               autoplay={true}
-              className="w-full h-64 object-cover"
+              className="object-cover"
             />
           </div>
         </div>
